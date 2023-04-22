@@ -10,15 +10,20 @@
 // 3: processing request 
 // 4: request finished and response is ready
 
-document.getElementById("btn").addEventListener("click",function(){
+document.getElementById("btn").addEventListener("click", function () {
 
     // XMLHttpRequest
 
     const xhr = new XMLHttpRequest();
 
-    xhr.onload = function(){
+    xhr.onprogress = function () {
+        console.log("Process işleniyor...", this.readyState);
+    }
+
+    xhr.onload = function () {
         if (this.status === 200) {
             document.getElementById("ajax").textContent = this.responseText;
+            console.log(this.responseText);
         }
     }
     // xhr.onreadystatechange = function(){
@@ -27,9 +32,8 @@ document.getElementById("btn").addEventListener("click",function(){
     //         // Response Hazır
     //         console.log(this.responseText);
     //     }
-
     // }
-    xhr.open("GET","example.txt",true);
+    xhr.open("GET", "example.txt", true);
 
     xhr.send();
 });
