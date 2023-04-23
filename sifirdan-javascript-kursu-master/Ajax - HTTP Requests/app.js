@@ -1,24 +1,24 @@
 // Ajax,callback , http requests
 
-class Request{
+class Request {
 
-    constructor(){
+    constructor() {
         this.xhr = new XMLHttpRequest();
     }
     // Get Request
 
-    get(url,callback){
+    get(url, callback) {
 
-        this.xhr.open("GET",url); // Bağlantı açık
+        this.xhr.open("GET", url); // Bağlantı açık
 
-        this.xhr.onload = () =>{
+        this.xhr.onload = () => {
 
             if (this.xhr.status === 200) {
-                callback(null,this.xhr.responseText); // İsteğimiz bitti
+                callback(null, this.xhr.responseText); // İsteğimiz bitti
             }
             else {
                 // Hata durumuna 
-                callback("Get Request: Bir hata oluştu",null);
+                callback("Get Request: Bir hata oluştu", null);
             }
 
         };
@@ -28,18 +28,18 @@ class Request{
 
 
     }
-    post(url,data,callback){
-        this.xhr.open("POST",url);
-        this.xhr.setRequestHeader("Content-type","application/json"); // JSON Verisi
-        
+    post(url, data, callback) {
+        this.xhr.open("POST", url);
+        this.xhr.setRequestHeader("Content-type", "application/json"); // JSON Verisi
+
         this.xhr.onload = () => {
-            if(this.xhr.status === 201) {
+            if (this.xhr.status === 201) {
                 // Başarılı
-                callback(null,this.xhr.responseText);
+                callback(null, this.xhr.responseText);
 
             }
             else {
-                callback("Post Request: Bir hata oluştu",null);
+                callback("Post Request: Bir hata oluştu", null);
             }
 
         }
@@ -48,18 +48,18 @@ class Request{
 
 
     }
-    put(url,data,callback){
-        this.xhr.open("PUT",url);
-        this.xhr.setRequestHeader("Content-type","application/json"); // JSON Verisi
-        
+    put(url, data, callback) {
+        this.xhr.open("PUT", url);
+        this.xhr.setRequestHeader("Content-type", "application/json"); // JSON Verisi
+
         this.xhr.onload = () => {
-            if(this.xhr.status === 200) {
+            if (this.xhr.status === 200) {
                 // Başarılı
-                callback(null,this.xhr.responseText);
+                callback(null, this.xhr.responseText);
 
             }
             else {
-                callback("Put Request: Bir hata oluştu",null);
+                callback("Put Request: Bir hata oluştu", null);
             }
 
         }
@@ -68,18 +68,18 @@ class Request{
 
 
     }
-    delete(url,callback){
+    delete(url, callback) {
 
-        this.xhr.open("DELETE",url); // Bağlantı açık
+        this.xhr.open("DELETE", url); // Bağlantı açık
 
-        this.xhr.onload = () =>{
+        this.xhr.onload = () => {
 
             if (this.xhr.status === 200) {
-                callback(null,"Veri silme işlemi başarılı"); // İsteğimiz bitti
+                callback(null, "Veri silme işlemi başarılı"); // İsteğimiz bitti
             }
             else {
                 // Hata durumuna 
-                callback("Delete Request: Bir hata oluştu",null);
+                callback("Delete Request: Bir hata oluştu", null);
             }
 
         };
@@ -89,9 +89,9 @@ class Request{
 
 
     }
-    
-    
-    
+
+
+
 }
 
 const request = new Request();
@@ -144,14 +144,14 @@ const request = new Request();
 
 
 // })
-request.delete("https://jsonplaceholder.typicode.com/albums/10",function(err,response){
-    if (err === null){
+request.delete("https://jsonplaceholder.typicode.com/albums/10", function (err, response) {
+    if (err === null) {
         // Başarılı
         console.log(response);
     }
     else {
-       // Hata
-       console.log(err); 
+        // Hata
+        console.log(err);
     }
 
 });
