@@ -31,7 +31,6 @@ class Request {
             if (this.xhr.status === 201) {
                 // Başarılı
                 callback(null, this.xhr.responseText);
-
             }
             else {
                 callback("Post Request: Bir hata oluştu", null);
