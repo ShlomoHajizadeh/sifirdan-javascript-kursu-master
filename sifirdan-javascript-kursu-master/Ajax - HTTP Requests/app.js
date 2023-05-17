@@ -1,4 +1,4 @@
-// Ajax,callback , http requests
+// Ajax, callback, http requests
 
 class Request {
 
@@ -10,7 +10,7 @@ class Request {
     get(url, callback) {
 
         this.xhr.open("GET", url); // Bağlantı açık
-        
+
         this.xhr.onload = () => {
 
             if (this.xhr.status === 200) {
@@ -77,7 +77,7 @@ class Request {
 
 const request = new Request();
 
-const albums  = request.get("https://jsonplaceholder.typicode.com/albums");
+const albums = request.get("https://jsonplaceholder.typicode.com/albums");
 
 console.log(albums)
 

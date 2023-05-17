@@ -42,8 +42,3 @@
 // }).then(response2 => console.log(response2))
 // .catch(err => console.error(err));
 //  // 1 tane catch - birden çok then- Promise Chain
-
-
-
-
-
