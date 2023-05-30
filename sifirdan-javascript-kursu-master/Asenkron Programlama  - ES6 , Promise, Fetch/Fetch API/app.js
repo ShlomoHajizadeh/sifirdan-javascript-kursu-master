@@ -6,6 +6,7 @@ function getTextFile(){ // Text Dosyası
     .catch(err => console.log(err));
 
 }
+
 function getJsonFile(){ // Local bir Json Dosyasından Veri Alma
 
     fetch("example.json")
@@ -13,17 +14,17 @@ function getJsonFile(){ // Local bir Json Dosyasından Veri Alma
     .then(data => console.log(data))
     .catch(err => console.log(err));
 }
+
 function getExternalAPI(){
     fetch("https://api.exchangeratesapi.io/latest")
     .then(response => response.json())
-    .then(data => {
-        console.log(data.rates.TRY);
-    })
+    .then(data => console.log(data))
     .catch(err => console.log(err));
 }
+
 // getTextFile();
 // getJsonFile();
-// getExternalAPI();
+getExternalAPI();
 
 // https://api.exchangeratesapi.io/latest
 
