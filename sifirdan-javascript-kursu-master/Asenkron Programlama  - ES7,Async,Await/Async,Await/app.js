@@ -1,72 +1,52 @@
-// async function test(data) {
-//     // Promise return new Promise
-//     // return data;
-//     let promise = new Promise((resolve,reject) => {
-//         setTimeout(()=> {
-//             resolve("Bu bir değerdir.");
-//         },5000);
-//     });
+async function test(data) {
+    // Promise return new Promise
+    // return data;
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Bu bir değerdir.");
+        }, 5000);
+    });
 
-//     let response = await promise; // 5 saniye bekleyecek.
-
-    
-
-//     return response;
+    let response = await promise; // 5 saniye bekleyecek.
 
 
+    return response;
+}
 
+test("Merhaba").then(response => console.log(response));
 
+async function testData(data) {
 
-// }
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (typeof data === "string") {
+                resolve(data);
+            }
+            else {
+                reject(new Error("Lütfen string bir değer girin"));
+            }
+        }, 5000);
+    });
 
-// test("Merhaba").then(response => console.log(response));
+    const response = await promise;
 
-// async function testData(data) {
+    return response;
+}
 
-//     let promise = new Promise((resolve,reject) => {
-//         setTimeout(()=> {
-//             if(typeof data === "string") {
-//                 resolve(data);
-//             }
-//             else {
-//                 reject(new Error("Lütfen string bir değer girin"));
-//             }
-//         },5000);
-//     });
+testData(24)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 
-//     const response = await promise; 
-
-//     return response;
-
-
-// }
-
-// testData(24)
-// .then(data => console.log(data))
-// .catch(err => console.log(err));
-
-
-
-async function getCurrency(url){
+async function getCurrency(url) {
 
     const response = await fetch(url); // Response Object
-    
+    console.log(response)
 
     const data = await response.json(); // Json object
-
+    console.log(data)
 
     return data;
-
 }
 
 getCurrency("https://api.exchangeratesapi.io/latest")
-.then(ahmet => console.log(ahmet));
-
-
-
-
-
-
-
-
-
+    .then(ahmet => console.log(ahmet));
