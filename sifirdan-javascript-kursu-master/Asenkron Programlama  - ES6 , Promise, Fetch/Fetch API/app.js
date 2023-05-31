@@ -1,25 +1,25 @@
-function getTextFile(){ // Text Dosyası
+function getTextFile() { // Text Dosyası
 
     fetch("example.txt")
-    .then(response => response.text())
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
 
 }
 
-function getJsonFile(){ // Local bir Json Dosyasından Veri Alma
+function getJsonFile() { // Local bir Json Dosyasından Veri Alma
 
     fetch("example.json")
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
 }
 
-function getExternalAPI(){
+function getExternalAPI() {
     fetch("https://api.exchangeratesapi.io/latest")
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
 }
 
 // getTextFile();

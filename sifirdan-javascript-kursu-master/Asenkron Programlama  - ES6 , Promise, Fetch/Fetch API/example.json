@@ -1,17 +1,17 @@
 [
     {
-        "name": "Mustafa",
-        "age": 25,
-        "salary": 4000
+        "name": "Suleiman",
+        "age": 22,
+        "salary": 10000
     },
     {
-        "name": "Oğuz",
+        "name": "Aysel",
         "age": 25,
         "salary": 5000
     },
     {
-        "name": "Serhat",
-        "age": 26,
-        "salary": 3500
+        "name": "Davud",
+        "age": 3,
+        "salary": 0
     }
 ]
